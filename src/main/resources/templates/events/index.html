@@ -7,17 +7,18 @@
 
     <nav th:replace="fragments :: navigation"></nav>
 
-
     <p th:unless="${events} and ${events.size()}">No events!</p>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tr th:each="event : ${events}">
-            <td th:text="${event}">Event name</td>
+            <td th:text="${event.getKey()}">Event name</td>
+            <td th:text="${event.getValue()}">Event description</td>
         </tr>
     </table>
 
