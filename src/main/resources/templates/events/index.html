@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body>
+<body class="container">
     <h1>All Events</h1>
 
     <nav th:replace="fragments :: navigation"></nav>
@@ -10,8 +10,16 @@
 
     <p th:unless="${events} and ${events.size()}">No events!</p>
 
-    <th:block th:each="event : ${events}">
-        <p th:text="${event}">Event name</p>
-    </th:block>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tr th:each="event : ${events}">
+            <td th:text="${event}">Event name</td>
+        </tr>
+    </table>
+
 </body>
 </html>
