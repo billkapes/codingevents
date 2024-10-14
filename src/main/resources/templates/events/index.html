@@ -18,6 +18,8 @@
         </thead>
         <tr th:each="event : ${events}">
             <td th:text="${event.name}">Event name</td>
+            <td th:text="${event.description}">Event description</td>
+
         </tr>
     </table>
 
