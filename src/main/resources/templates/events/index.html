@@ -12,13 +12,16 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tr th:each="event : ${events}">
+            <td th:text="${event.id}">ID</td>
             <td th:text="${event.name}">Event name</td>
             <td th:text="${event.description}">Event description</td>
+
 
         </tr>
     </table>
