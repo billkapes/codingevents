@@ -1,5 +1,6 @@
 package com.launchcode.codingevents.controllers;
 
+import com.launchcode.codingevents.models.Event;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ import java.util.List;
 @Controller
 @RequestMapping("events")
 public class EventController {
-    private static HashMap<String, String> events = new HashMap<>();
+    private static List<Event> events = new ArrayList<>();
 
     @GetMapping
     public String displayAllEvents(Model model) {
@@ -29,10 +30,8 @@ public class EventController {
 
     @PostMapping("create")
     public String createEvent(@RequestParam String eventName) {
-        events.put(eventName, "Sample description");
-        events.put("Menteaship","A fun meetup for connecting with mentors");
-        events.put("Code With Pride","A fun meetup sponsored by LaunchCode");
-        events.put("Javascripty", "An imaginary meetup for Javascript developers");
+        events.add(new Event(eventName));
+
         return "redirect:/events";
     }
 }
