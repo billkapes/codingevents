@@ -21,7 +21,9 @@
             <td th:text="${event.id}">ID</td>
             <td th:text="${event.name}">Event name</td>
             <td th:text="${event.description}">Event description</td>
-
+            <td>
+                <a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+            </td>
 
         </tr>
     </table>
