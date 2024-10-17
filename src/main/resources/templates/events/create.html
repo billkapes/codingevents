@@ -12,14 +12,18 @@
     <form method="post" action="/events/create">
         <div class="form-group">
             <label>Name
-                <input type="text" name="name" class="form-control">
+                <input th:field="${event.name}" class="form-control">
             </label>
+            <p class="error" th:errors="${event.name}"></p>
             <label>Description
-                <input type="text" name="description" class="form-control">
+                <input th:field="${event.description}" class="form-control">
             </label>
+            <p class="error" th:errors="${event.description}"></p>
             <label>Contact Email
-                <input type="text" name="contactEmail" class="form-control">
+                <input th:field="${event.description}" class="form-control">
             </label>
+            <p class="error" th:errors="${event.contactEmail}"></p>
+
             <input type="submit" value="Create Event" class="btn btn-success">
         </div>
     </form>
